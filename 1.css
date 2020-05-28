@@ -1,0 +1,153 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.nutslide {
+    width: 100%;
+    text-align: center;
+    height: 50px;
+}
+
+ul {
+    display: inline-block;
+}
+
+.nutslide li {
+    list-style: none;
+    float: left;
+    width: 15px;
+    height: 15px;
+    margin: 10px;
+    background: gray;
+    border-radius: 50%;
+    text-indent: -9000px;
+    transition: 0.4s;
+    border: 1px solid white;
+}
+
+.nutslide li:hover {
+    background: black;
+}
+
+.prev {
+    position: absolute;
+    z-index: 4;
+    left: 0%;
+    top: 33%;
+    cursor: pointer;
+}
+
+.next {
+    position: absolute;
+    z-index: 4;
+    right: 0;
+    top: 33%;
+    cursor: pointer;
+}
+
+.motslide {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.motslide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.anhslide {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    text-align: center;
+    background: black;
+}
+
+header.apple {
+    width: 100%;
+    height: 700px;
+    position: relative;
+    /* background: black; */
+    perspective: 1000px;
+}
+
+.motslide.active.bienmattrai {
+    animation: bienmattrai 1s forwards;
+    transform-origin: 50% 0%;
+}
+@-webkit-keyframes bienmattrai {
+    0% {
+        transform: rotateX(0deg);
+        visibility: visible; 
+        opacity: 1;
+    }
+    50% {
+        transform: rotateX(-25deg) ;
+        visibility: visible; 
+        opacity: 1;
+    }
+    100% {
+        transform: rotateX(-25deg) scale(0.7) translateZ(-400px);
+        visibility: hidden; 
+        opacity: 0;
+    }
+}
+.motslide.active.bienmatphai {
+    animation: bienmatphai 1s forwards;
+}
+@-webkit-keyframes bienmatphai {
+    0% {
+        transform: translateX(0%);
+        visibility: visible; 
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        visibility: hidden; 
+        opacity: 0;
+    }
+}
+.motslide.divaophai {
+    animation: divaophai 1s forwards;
+}
+@-webkit-keyframes divaophai {
+    0% {
+        transform: translateX(100%);
+        visibility: hidden; 
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        visibility: visible; 
+        opacity: 1;
+    }
+}
+.motslide.divaotrai {
+    animation: divaotrai 1s forwards;
+}
+@-webkit-keyframes divaotrai {
+    0% {
+        transform: translateX(-100%);
+        visibility: hidden; 
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        visibility: visible; 
+        opacity: 1;
+    }
+}
+.nutslide li.xanh{
+    background:none;
+    border: 1px solid #1fb0db;
+}
